@@ -3,7 +3,7 @@
 
 这里存放文档及前端代码编写规范，部分文档内容直接参考百度的[fis][]团队的[styleguide][]项目，希望在此基础上修订出适合我们自己的规范。目前还没定稿，欢迎参与讨论。
 
-在文档规范化的前提下，计划加上angularjs[]的规范文档，这里同样参考一份来自[johnpapa][]比较成熟的[规范][johnpapa_styleguide]。
+在文档规范化的前提下，计划加上angularjs[angularjs][]的规范文档，这里同样参考一份来自[johnpapa][]比较成熟的[规范][johnpapa_styleguide]。
 
 规范
 ======
