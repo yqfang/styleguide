@@ -1,7 +1,7 @@
 前端编码规范文档
 -----------------
 
-这里存放文档及前端代码编写规范，部分文档内容参考[fis][]团队的[styleguide][]项目，希望在此基础上修订出适合我们自己的规范,**还未定稿，对规范中提及的点有不赞同的欢迎[提出 issues ](https://github.com/fex-team/styleguide/issues/new)(请添加`目录规范`标签)讨论。**
+这里存放文档及前端代码编写规范，部分文档内容参考[fis][]团队的[styleguide][]项目，希望在此基础上修订出适合我们自己的规范, 目前所有文档都**还未定稿，对规范中提及的点有不赞同的欢迎[提出 issues ](https://github.com/fex-team/styleguide/issues/new)讨论。**
 
 在文档规范化的前提下，计划加上[angularjs][]的规范文档，这里同样参考一份来自[johnpapa][]比较成熟的[规范][johnpapa_styleguide]。
 
