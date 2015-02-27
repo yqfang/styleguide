@@ -36,7 +36,7 @@ JavaScript编码规范
     3.8 [函数](#38-函数)
 
 4. [浏览器环境](#4-浏览器环境)
-    
+ 
     4.1 [模块化](#41-模块化)
 
     4.2 [DOM](#42-dom)
@@ -48,6 +48,7 @@ JavaScript编码规范
 JavaScript在前端一直有着广泛的应用，特别是在浏览器端的行为管理。本文档的目标是使JavaScript代码风格保持一致，容易被理解和被维护。
 
 虽然本文档是针对JavaScript设计的，但是在使用各种JavaScript的预编译语言时(如TypeScript等)时，适用的部分也应尽量遵循本文档的约定。
+
 
 2 代码风格
 ----------
@@ -61,6 +62,7 @@ JavaScript在前端一直有着广泛的应用，特别是在浏览器端的行�
 UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。
 
 ##### [建议] 在文件结尾处，保留一个空行。
+
 
 ### 2.2 结构
 
@@ -117,7 +119,6 @@ var a = !arr.length;
 a++;
 a = b + c;
 ```
-
 ##### [强制] 用作代码块起始的左花括号 `{` 前必须有一个空格。
 
 示例：
@@ -260,6 +261,7 @@ if ( num > list.length ) {
 while ( len-- ) {
 }
 ```
+
 
 ##### [强制] 单行声明的数组与对象，如果包含元素，`{}` 和 `[]` 内紧贴括号部分不允许包含空格。
 
@@ -493,10 +495,7 @@ catch (ex) {
 }
 ```
 
-
-
 #### 2.2.4 语句
-
 
 ##### [强制] 不得省略语句结束的分号。
 
@@ -515,6 +514,7 @@ if (condition) callFunc();
 if (condition)
     callFunc();
 ```
+
 
 ##### [强制] 函数定义结束不允许添加分号。
 
@@ -567,11 +567,7 @@ var func = (function () {
 ```
 
 
-
-
-
 ### 2.3 命名
-
 
 ##### [强制] `变量` 使用 `Camel命名法`。
 
@@ -606,7 +602,6 @@ function stringFormat(source) {
 function hear(theBells) {
 }
 ```
-
 
 ##### [强制] `类` 使用 `Pascal命名法`。
 
@@ -704,24 +699,17 @@ loadingData.then(callback);
 ```
 
 
-
-
 ### 2.4 注释
 
-
 #### 2.4.1 单行注释
-
 
 ##### [强制] 必须独占一行。`//` 后跟一个空格，缩进与下一行被注释说明的代码一致。
 
 #### 2.4.2 多行注释
 
-
 ##### [建议] 避免使用 `/*...*/` 这样的多行注释。有多行注释内容时，使用多个单行注释。
 
-
 #### 2.4.3 文档化注释
-
 
 ##### [强制] 为了便于代码阅读和自文档化，以下内容必须包含以 `/**...*/` 形式的块注释中。
 
@@ -740,13 +728,9 @@ loadingData.then(callback);
 
 ##### [强制] 文档注释前必须空一行。
 
-
 ##### [建议] 自文档化的文档说明 what，而不是 how。
 
-
-
 #### 2.4.4 类型定义
-
 
 ##### [强制] 类型定义都是以`{`开始, 以`}`结束。
 
@@ -759,31 +743,29 @@ loadingData.then(callback);
 
 ##### [强制] 对于基本类型 {string}, {number}, {boolean}，首字母必须小写。
 
-| 类型定义 | 语法示例 | 解释 |
-| ------- | ------- | --- |
-|String|{string}|--|
-|Number|{number}|--|
-|Boolean|{boolean}|--|
-|Object|{Object}|--|
-|Function|{Function}|--|
-|RegExp|{RegExp}|--|
-|Array|{Array}|--|
-|Date|{Date}|--|
-|单一类型集合|{Array.&lt;string&gt;}|string 类型的数组|
-|多类型|{(number｜boolean)}|可能是 number 类型, 也可能是 boolean 类型|
-|允许为null|{?number}|可能是 number, 也可能是 null|
-|不允许为null|{!Object}|Object 类型, 但不是 null|
-|Function类型|{function(number, boolean)}|函数, 形参类型|
-|Function带返回值|{function(number, boolean):string}|函数, 形参, 返回值类型|
-|参数可选|@param {string=} name|可选参数, =为类型后缀|
-|可变参数|@param {...number} args|变长参数,  ...为类型前缀|
-|任意类型|{*}|任意类型|
-|可选任意类型|@param {*=} name|可选参数，类型不限|
-|可变任意类型|@param {...*} args|变长参数，类型不限|
-
+| 类型定义         | 语法示例                           | 解释                                      |
+|------------------|------------------------------------|-------------------------------------------|
+| String           | {string}                           | --                                        |
+| Number           | {number}                           | --                                        |
+| Boolean          | {boolean}                          | --                                        |
+| Object           | {Object}                           | --                                        |
+| Function         | {Function}                         | --                                        |
+| RegExp           | {RegExp}                           | --                                        |
+| Array            | {Array}                            | --                                        |
+| Date             | {Date}                             | --                                        |
+| 单一类型集合     | {Array.&lt;string&gt;}             | string 类型的数组                         |
+| 多类型           | {(number｜boolean)}                | 可能是 number 类型, 也可能是 boolean 类型 |
+| 允许为null       | {?number}                          | 可能是 number, 也可能是 null              |
+| 不允许为null     | {!Object}                          | Object 类型, 但不是 null                  |
+| Function类型     | {function(number, boolean)}        | 函数, 形参类型                            |
+| Function带返回值 | {function(number, boolean):string} | 函数, 形参, 返回值类型                    |
+| 参数可选         | @param {string=} name              | 可选参数, =为类型后缀                     |
+| 可变参数         | @param {...number} args            | 变长参数,  ...为类型前缀                  |
+| 任意类型         | {*}                                | 任意类型                                  |
+| 可选任意类型     | @param {*=} name                   | 可选参数，类型不限                        |
+| 可变任意类型     | @param {...*} args                 | 变长参数，类型不限                        |
 
 #### 2.4.5 文件注释
-
 
 ##### [强制] 文件顶部必须包含文件注释，用 `@file` 标识文件说明。
 
@@ -822,7 +804,6 @@ loadingData.then(callback);
 
 #### 2.4.6 命名空间注释
 
-
 ##### [建议] 命名空间使用 `@namespace` 标识。
 
 示例：
@@ -835,7 +816,6 @@ var util = {};
 ```
 
 #### 2.4.7 类注释
-
 
 ##### [建议] 使用 `@class` 标记类或构造函数。
 
@@ -946,9 +926,7 @@ Fronteer.prototype._getLevel = function () {
 };
 ```
 
-
 #### 2.4.8 函数/方法注释
-
 
 ##### [强制] 函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。
 
@@ -1003,7 +981,6 @@ function foo(option) {
 
 #### 2.4.9 事件注释
 
-
 ##### [强制] 必须使用 `@event` 标识事件，事件参数的标识与方法描述的参数标识相同。
 
 示例：
@@ -1055,7 +1032,6 @@ Select.prototype.clickHandler = function () {
 
 #### 2.4.10 常量注释
 
-
 ##### [强制] 常量必须使用 `@const` 标记，并包含说明和类型信息。
 
 示例：
@@ -1071,7 +1047,6 @@ var REQUEST_URL = 'myurl.do';
 ```
 
 #### 2.4.11 复杂类型注释
-
 
 ##### [建议] 对于类型未定义的复杂结构的注释，可以使用 `@typedef` 标识来定义。
 
@@ -1104,9 +1079,7 @@ var servers = [
 ];
 ```
 
-
 #### 2.4.12 AMD 模块注释
-
 
 ##### [强制] AMD 模块使用 `@module` 或 `@exports` 标识。
 
@@ -1253,7 +1226,6 @@ define(
 );
 ```
 
-
 ##### [建议] 多模块定义时，可以使用 `@exports` 标识各个模块。
 
 示例：
@@ -1322,13 +1294,11 @@ Bar.prototype.baz = function () {
 };
 ```
 
-
 #### 2.4.13 细节注释
-
 
 对于内部实现、不容易理解的逻辑说明、摘要信息等，我们可能需要编写细节注释。
 
-#### [建议] 细节注释遵循单行注释的格式。说明必须换行时，每行是一个单行注释的起始。
+##### [建议] 细节注释遵循单行注释的格式。说明必须换行时，每行是一个单行注释的起始。
 
 示例：
 
@@ -1352,17 +1322,10 @@ function foo(p1, p2, opt_p3) {
 4. XXX: 该处存在陷阱。此时需要对陷阱进行描述。
 
 
-
-
-## 3 语言特性
-
-
-
-
-
+3 语言特性
+----------
 
 ### 3.1 变量
-
 
 ##### [强制] 变量在使用前必须通过 `var` 定义。
 
@@ -1401,7 +1364,6 @@ var hangModules = [],
     missModules = [],
     visited = {};
 ```
-
 
 ##### [强制] 变量必须 `即用即声明`，不得在函数或其它形式的代码块起始位置统一声明所有变量。
 
@@ -1450,13 +1412,7 @@ function kv2List(source) {
 }
 ```
 
-
-
-
-
-
 ### 3.2 条件
-
 
 ##### [强制] 在 Equality Expression 中使用类型严格的 `===`。仅当判断 null 或 undefined 时，允许使用 `== null`。
 
@@ -1480,7 +1436,6 @@ if (age == 30) {
 ```
 
 ##### [建议] 尽可能使用简洁的表达式。
-
 
 示例：
 
@@ -1617,12 +1572,7 @@ function getName() {
 }
 ```
 
-
-
-
-
 ### 3.3 循环
-
 
 ##### [建议] 不要在循环体中包含函数表达式，事先将函数提取到循环体外。
 
@@ -1707,15 +1657,9 @@ while (len--) {
 }
 ```
 
-
-
-
-
 ### 3.4 类型
 
-
 #### 3.4.1 类型检测
-
 
 ##### [建议] 类型检测优先使用 `typeof`。对象类型检测使用 `instanceof`。`null` 或 `undefined` 的检测使用 `== null`。
 
@@ -1753,9 +1697,7 @@ variable == null
 typeof variable === 'undefined'
 ```
 
-
 #### 3.4.2 类型转换
-
 
 ##### [建议] 转换成 `string` 时，使用 `+ ''`。
 
@@ -1827,11 +1769,7 @@ var num = 3.14;
 parseInt(num, 10);
 ```
 
-
-
-
 ### 3.5 字符串
-
 
 ##### [强制] 字符串开头和结束使用单引号 `'`。
 
@@ -1891,11 +1829,7 @@ var str2 = '' // 建议第一个为空字符串, 第二个换行开始并缩进�
 - hogon: 体积小，在现代浏览器下性能高。
 - nunjucks: 体积较大，性能一般，模板复用性高。
 
-
-
-
 ### 3.6 对象
-
 
 ##### [强制] 使用对象字面量 `{}` 创建新 `Object`。
 
@@ -1984,11 +1918,7 @@ for (var key in info) {
 }
 ```
 
-
-
-
 ### 3.7 数组
-
 
 ##### [强制] 使用数组字面量 `[]` 创建新数组，除非想要创建的是指定长度的数组。
 
@@ -2036,15 +1966,9 @@ for (i in arr) {
 
 ##### [建议] 清空数组使用 `.length = 0`。
 
-
-
-
 ### 3.8 函数
 
-
-
 #### 3.8.1 函数长度
-
 
 ##### [建议] 一个函数的长度控制在 `50` 行以内。
 
@@ -2104,9 +2028,7 @@ function checkAAvailability() {
 }
 ```
 
-
 #### 3.8.2 参数设计
-
 
 ##### [建议] 一个函数的参数控制在 `6` 个以内。
 
@@ -2115,7 +2037,6 @@ function checkAAvailability() {
 除去不定长参数以外，函数具备不同逻辑意义的参数建议控制在 6 个以内，过多参数会导致维护难度增大。
 
 某些情况下，如使用 AMD Loader 的 require 加载多个模块时，其 callback 可能会存在较多参数，因此对函数参数的个数不做强制限制。
-
 
 ##### [建议] 通过 `options` 参数传递非数据输入型参数。
 
@@ -2164,10 +2085,7 @@ function removeElement(element, options) {
 - 当配置项有增长时，无需无休止地增加参数个数，不会出现 removeElement(element, true, false, false, 3) 这样难以理解的调用代码。
 - 当部分配置参数可选时，多个参数的形式非常难处理重载逻辑，而使用一个 options 对象只需判断属性是否存在，实现得以简化。
 
-
-
 #### 3.8.3 闭包
-
 
 ##### [建议] 在适当的时候将闭包内大对象置为 `null`。
 
@@ -2246,7 +2164,6 @@ while (len--) {
 
 #### 3.8.4 空函数
 
-
 ##### [建议] 空函数不使用 `new Function()` 的形式。
 
 示例：
@@ -2270,14 +2187,7 @@ MyClass.prototype.hooks.before = EMPTY_FUNCTION;
 MyClass.prototype.hooks.after = EMPTY_FUNCTION;
 ```
 
-
-
-
-
-
-
 ### 3.9 面向对象
-
 
 ##### [强制] 类的继承方案，实现时需要修正 `constructor`。
 
@@ -2327,7 +2237,6 @@ Animal.prototype.jump = function () {
 };
 ```
 
-
 ##### [建议] 属性在构造函数中声明，方法在原型中声明。
 
 解释： 
@@ -2361,7 +2270,6 @@ TextNode.prototype.clone = function () {
 2. 每个事件信息都可以根据需要提供或者不提供，更自由。
 3. 扩展方便，未来添加事件信息时，无需考虑会破坏监听器参数形式而无法向后兼容。
 
-
 ##### [建议] 设计自定义事件时，应考虑禁止默认行为。
 
 解释：
@@ -2371,14 +2279,9 @@ TextNode.prototype.clone = function () {
 1. 事件监听函数中 return false。
 2. 事件对象中包含禁止默认行为的方法，如 preventDefault。
 
-
-
-
 ### 3.10 动态特性
 
-
 #### 3.10.1 eval
-
 
 ##### [强制] 避免使用直接 `eval` 函数。
 
@@ -2390,16 +2293,13 @@ TextNode.prototype.clone = function () {
 
 ##### [建议] 尽量避免使用 `eval` 函数。
 
-
 #### 3.10.2 动态执行代码
-
 
 ##### [建议] 使用 `new Function` 执行动态代码。
 
 解释：
 
 通过 new Function 生成的函数作用域是全局使用域，不会影响当当前的本地作用域。如果有动态代码执行的需求，建议使用 new Function。
-
 
 示例：
 
@@ -2408,10 +2308,7 @@ var handler = new Function('x', 'y', 'return x + y;');
 var result = handler($('#x').val(), $('#y').val());
 ```
 
-
-
 #### 3.10.3 with
-
 
 ##### [建议] 尽量不要使用 `with`。
 
@@ -2419,18 +2316,13 @@ var result = handler($('#x').val(), $('#y').val());
 
 使用 with 可能会增加代码的复杂度，不利于阅读和管理；也会对性能有影响。大多数使用 with 的场景都能使用其他方式较好的替代。所以，尽量不要使用 with。
 
-
-
-
 #### 3.10.4 delete
-
 
 ##### [建议] 减少 `delete` 的使用。
 
 解释：
 
 如果没有特别的需求，减少或避免使用`delete`。`delete`的使用会破坏部分 JavaScript 引擎的性能优化。
-
 
 ##### [建议] 处理 `delete` 可能产生的异常。
 
@@ -2451,11 +2343,7 @@ catch (deleteError) {
 }
 ```
 
-
-
 #### 3.10.5 对象属性
-
-
 
 ##### [建议] 避免修改外部传入的对象。
 
@@ -2502,7 +2390,6 @@ Tree.prototype.selectNode = function (id) {
 
 除此之外，也可以通过 deepClone 等手段将自身维护的对象与外部传入的分离，保证不会相互影响。
 
-
 ##### [建议] 具备强类型的设计。
 
 解释：
@@ -2511,23 +2398,12 @@ Tree.prototype.selectNode = function (id) {
 - 从 DOM 中取出的值通常为 string 类型，如果有对象或函数的接收类型为 number 类型，提前作好转换，而不是期望对象、函数可以处理多类型的值。
 
 
-
-
-
-
-
-
-
-## 4 浏览器环境
-
-
-
+4 浏览器环境
+------------
 
 ### 4.1 模块化
 
-
 #### 4.1.1 AMD
-
 
 ##### [强制] 使用 `AMD` 作为模块定义。
 
@@ -2540,7 +2416,6 @@ AMD 作为由社区认可的模块定义形式，提供多种重载提供灵活�
 - 官方实现的 [requirejs](http://requirejs.org/)
 - 百度自己实现的 [esl](https://github.com/ecomfe/esl)
 
-
 ##### [强制] 模块 `id` 必须符合标准。
 
 解释：
@@ -2552,10 +2427,7 @@ AMD 作为由社区认可的模块定义形式，提供多种重载提供灵活�
 3. 不应该有 .js 后缀。
 4. 跟文件的路径保持一致。
 
-
-
 #### 4.1.2 define
-
 
 ##### [建议] 定义模块时不要指明 `id` 和 `dependencies`。
 
@@ -2574,7 +2446,6 @@ define(
     }
 );
 ```
-
 
 ##### [建议] 使用 `return` 来返回模块定义。
 
@@ -2596,11 +2467,7 @@ define(
 );
 ```
 
-
-
-
 #### 4.1.3 require
-
 
 ##### [强制] 全局运行环境中，`require` 必须以 `async require` 形式调用。
 
@@ -2626,7 +2493,6 @@ var foo = require('foo');
 1. 在模块定义中使用 global require，对封装性是一种破坏。
 2. 在 AMD 里，global require 是可以被重命名的。并且 Loader 甚至没有全局的 require 变量，而是用 Loader 名称做为 global require。模块定义不应该依赖使用的 Loader。
 
-
 ##### [强制] Package在实现时，内部模块的 `require` 必须使用 `relative id`。
 
 解释：
@@ -2642,7 +2508,6 @@ define(
     }
 );
 ```
-
 
 ##### [建议] 不会被调用的依赖模块，在 `factory` 开始处统一 `require`。
 
@@ -2663,16 +2528,11 @@ define(
 );
 ```
 
-
-
 ### 4.2 DOM
-
 
 #### 4.2.1 元素获取
 
-
 ##### [建议] 对于单个元素，尽可能使用 `document.getElementById` 获取，避免使用`document.all`。
-
 
 ##### [建议] 对于多个元素的集合，尽可能使用 `context.getElementsByTagName` 获取。其中 `context` 可以为 `document` 或其他元素。指定 `tagName` 参数为 `*` 可以获得所有子元素。
 
@@ -2704,14 +2564,9 @@ alert(elements[0].tagName);
 </script>
 ```
 
-
 ##### [建议] 获取元素的直接子元素时使用 `children`。避免使用`childNodes`，除非预期是需要包含文本、注释和属性类型的节点。
 
-
-
-
 #### 4.2.2 样式获取
-
 
 ##### [建议] 获取元素实际样式信息时，应使用 `getComputedStyle` 或 `currentStyle`。
 
@@ -2719,11 +2574,7 @@ alert(elements[0].tagName);
 
 通过 style 只能获得内联定义或通过 JavaScript 直接设置的样式。通过 CSS class 设置的元素样式无法直接通过 style 获取。
 
-
-
-
 #### 4.2.3 样式设置
-
 
 ##### [建议] 尽可能通过为元素添加预定义的 className 来改变元素样式，避免直接操作 style 设置。
 
@@ -2732,9 +2583,6 @@ alert(elements[0].tagName);
 解释：
 
 除了 IE，标准浏览器会忽略不规范的属性值，导致兼容性问题。
-
-
-
 
 #### 4.2.4 DOM 操作
 
@@ -2762,11 +2610,7 @@ DOM 操作也是非常耗时的一种操作，减少 DOM 操作有助于提高�
 
 第一种方法看起来比较标准，但是每次循环都会对 DOM 进行操作，性能极低。在这里推荐使用第二种方法。
 
-
-
-
 #### 4.2.5 DOM 事件
-
 
 ##### [建议] 优先使用 `addEventListener / attachEvent` 绑定事件，避免直接在 HTML 属性中或 DOM 的 `expando` 属性绑定事件处理。
 
@@ -2774,15 +2618,11 @@ DOM 操作也是非常耗时的一种操作，减少 DOM 操作有助于提高�
 
 expando 属性绑定事件容易导致互相覆盖。
 
-
 ##### [建议] 使用 `addEventListener` 时第三个参数使用 `false`。
 
 解释：
 
 标准浏览器中的 addEventListener 可以通过第三个参数指定两种时间触发模型：冒泡和捕获。而 IE 的 attachEvent 仅支持冒泡的事件触发。所以为了保持一致性，通常 addEventListener 的第三个参数都为 false。
 
-
 ##### [建议] 在没有事件自动管理的框架支持下，应持有监听器函数的引用，在适当时候（元素释放、页面卸载等）移除添加的监听器。
-
-
 
