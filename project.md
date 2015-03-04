@@ -11,54 +11,44 @@ NOT","SHOULD","SHOULD NOT","RECOMMENDED","MAY"和"OPTIONAL"在[RFC2119](http://o
 
 ## 目录规范
 
+参考angular官方项目: [angular-phonecat](https://github.com/angular/angular-phonecat)
 项目的基本目录结构为：
 
 ```
-/webroot 
- |-- lib
- |-- resources 
-         |-- css
-         |-- less
-         |-- img
- |-- src 
-      |-- common
-      |-- other modules
- |-- dist 
- |-- index.html
- |-- README.md 
+ / # which is the root for the project 
+ |-- app # which is the web root in develop period
+      |-- lib # which is root for the bower_components and the user-defined components
+      |-- resources  # which is the static resources
+              |-- css 
+              |-- less
+              |-- img
+      |-- modules # where you should concentrate on coding 
+           |-- common # where to put the common directives, fliters, services..
+           |-- others # where to put bussiness-oriented modules, and where you will refactor again and again.
+                 |-- main.js # where to define the submodules and the routes for the module
+                 |-- controllers # where to put controllers
+                 |-- services 
+                 |-- directives
+                 |-- fliter # I don't think there exist some bussiness-related fliters, so leave it or not 
+                 |-- views # where to put html partials like the templates for dialogs
+      |-- index.html # which is the home page
+ |-- dist # which is the webRoot for publish
+ |-- script # where to put some publish-related scripts some like fis.conf or gulp.conf
+ |-- test # where to put you test cases
+ |-- README.md  # where to briefly introduce your project
 ```
 
 ### README.md
 
 每个项目都必须"MUST"包含一个`README.md`文件，此文件中应当"SHOULD"概要描述此项目的功能和特点等信息。
 
-### index.html
-
-每个项目的首页路径"RECOMMENDED"放在开发根目录下
-### src
-
-项目中所有 JS 源码应当"SHOULD"存放在此目录下，且所有JS文件编写应当"SHOULD"遵循[Javascript 编码规范](https://github.com/yqfang/styleguide/blob/master/javascript.md)。
-
-### css、themes、less、sass
-
-样式类文件存放应当"SHOULD"遵循以下规律，且文件编写应当"SHOULD"遵循[CSS 编码规范](https://github.com/yqfang/styleguide/blob/master/css.md)。
-
-* 不带主题的样式文件应当"SHOULD"统一存放在 css 目录下面，且样式中使用的背景图片资源应当"SHOULD"统一存放在 `css/images` 目录下面。
-* 带主题的样式文件应当"SHOULD"统一存放在 themes 目录下对应的主题目录下，默认的主题应当"SHOULD"采用 `default` 作为主题名称，且应当"SHOULD"默认提供，样式中对应图片文件应当"SHOULD"存放在样式文件所在的主题目录下的 `images` 目录下。
-* less 格式的样式文件应当"SHOULD"统一存放在 `less` 目录下面。
-
-
 ### dist
 
-dist 作为项目输出目录，所有编译生成、提供给用户使用的文件应当"SHOULD"存放在此目录。
+dist 作为项目发布目录，所有编译生成、提供给用户使用的文件应当"SHOULD"存放在此目录, 关于项目发布的配置说明请参考
+[AngularJs 项目发布说明](./angular-publish.md)。
 
-为了让不太擅长 node.js 的用户可以正常使用编译后的代码，dist 目录应当"SHOULD"包含基本输出结果并提交在 github 中。
+发布目录不必提交。
 
-### build
+### modules
 
-所有工具类脚本应当"SHOULD"放在此目录。
-
-### test
-
-所有测试相关代码应当"SHOULD"放在此目录。
-
+modules 作为所有业务模块的路口，在开发和代码重构过程中文件的改变可能会很大。
